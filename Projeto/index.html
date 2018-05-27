@@ -1,37 +1,73 @@
+<!DOCTYPE HTML>
 <html>
+    <head>
+        <title>Classroom</title>
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Super Maps</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="all">
-    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-</head>
-
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Super Maps</a>
-    </nav>
-
-    <div class="container col-sm-6">
-        <h2>Login</h2>
-        <form action="/action_page.php">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Informe o email" name="email">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="TemplatePagina/assets/css/main.css" />
+    </head>
+    <body>
+        <!-- Wrapper -->
+        <div id="wrapper">
+        <!-- Header -->
+            <header id="header" class="alt">
+                <span class="logo"><img src="TemplatePagina/images/logo.png" alt="" /></span>
+                <h1>Sala de Aula</h1>
+                <h3>Um site desenvolvido por estudantes, para estudantes.</h3>
+            </header>
+        <!-- Nav -->
+            <nav id="nav">
+                <ul>
+                    <li><a href="#login" class="active">Entrar</a></li>
+                    <li><a href="#cadastro">Registre-se</a></li>
+                </ul>
+            </nav>
+        <!-- Main -->
+            <div id="main">
+                <!-- Introduction -->
+                    <section id="login" class="main">
+                        <div class="spotlight">
+                            <div class="content">
+                                <header class="major">
+                                        <h2>Acesse e bons estudos,  : )</h2>
+                                </header>
+                                <div class="row">
+                                    <ul class="actions">
+                                        <li><a href="PaginaLoginSignin/signin.html" class="button special">Login</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <!-- First Section -->
+                    <section id="cadastro" class="main">
+                        <div class="spotlight">
+                            <div class="content">
+                                <header class="major">
+                                        <h2>Registre-se</h2>
+                                </header>
+                                <p>Ainda não usa o Sala de Aula?<br>Faça parte da nossa comunidade de estudantes, se ajundando e tornando o processo de estudo mais simples!</p>
+                                <div class="row">                                   
+                                    <ul class="actions">
+                                            <li><a href="PaginaLoginSignin/signin.html" class="button special">Registre-se</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
             </div>
-            <div class="form-group">
-                <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd" placeholder="Informe a senha" name="pswd">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
-
-
-</body>
-
-</html
+        <!-- Footer -->
+            <footer id="footer">
+                <section>
+                    <h2>Compartilhe!</h2>
+                    <p>Compartilhe com seus amigos, todos se ajudam quanto mais gente usa!</p>
+                    <ul class="icons">
+                    <li><a href="#" class="icon fa-twitter alt"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
+                    </ul>
+                </section>
+            </footer>
+        </div>
+    </body>
+</html>
