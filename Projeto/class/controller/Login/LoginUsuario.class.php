@@ -63,26 +63,6 @@
                     $_SESSION["usuario"] = $usuario->usuario;
                     $_SESSION["id"] = $usuario->id;
 
-                    // Procura o usuário na tabela de estudantes
-                    $estudante = ORM::for_table("estudante")
-                                    ->where("idUsuario", $usuario->id)
-                                    ->find_one();
-                    
-                    // Se o estudante existir...
-                    if($estudante) {
-                        // Nível 2 = estudante
-                        $_SESSION["nivel"] = 2; 
-                    } else {
-                        // Procura o usuário na tabela de professores
-                        $professor = ORM::for_table("professor")
-                                    ->where("idUsuario", $usuario->id)
-                                    ->find_one();
-
-                        // Nível 1 = professor - se encontrar um registro
-                        // Nível 0 = administrador - se não encontrar nenhum registro
-                        $_SESSION["nivel"] = $professor ? 1 : 0;
-                    }
-
                     $_SESSION["inicio"] = time();
                     $retorno["erro"] = false;
                     $retorno["msg"] = "Usuário " . $usuario->usuario . " logado com sucesso";

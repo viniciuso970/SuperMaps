@@ -37,38 +37,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img class="navbar-brand navbar-left" src="view/images/logo.png" width="52px" height="60px"/>
-                <a class="navbar-brand" href="?acao=ListaCurso">Sala de Aula</a>
+                <a class="navbar-brand" href="?acao=ConsultaMapa">SuperMaps</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
-                    </ul>
-                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> [@nomeUsuario] <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -89,88 +61,61 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a data-toggle="collapse" data-target="#curso"><i class="fa fa-fw fa-arrow-circle-right"></i> Mapa <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="curso" class="collapse">
+                        <a data-toggle="collapse" data-target="#mapa"><i class="fa fa-fw"></i> Mapa <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="mapa" class="collapse">
                             <li>
                                 <a href="?acao=FormMapa">Adicionar Mapa</a>
                             </li>
-			    <li>
-				<a href="?acao=RemoveMapa"> Remover Mapa</a>
-			    </li>
                             <li>
-                                <a href="?acao=ListaCurso">Ver Cursos</a>
+                                <a href="?acao=RemoveMapa"> Remover Mapa</a>
+                            </li>
+                            <li>
+                                <a href="?acao=ConsultaMapa">Consultar Mapa</a>
+                            </li>
+                            <li>
+                                <a href="?acao=EditaMapa">Editar Mapa</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a data-toggle="collapse" data-target="#materia"><i class="fa fa-fw fa-arrow-circle-right"></i> Matéria <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="materia" class="collapse">
+                        <a data-toggle="collapse" data-target="#prateleira"><i class="fa fa-fw"></i> Prateleira <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="prateleira" class="collapse">
                             <li>
-                                <a class="btnBuscaMat">Buscar Matérias</a>
+                                <a href="?acao=FormMapa">Adicionar Prateleira</a>
                             </li>
                             <li>
-                                <a href="?acao=FormMateria"> Adicionar Matéria</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a data-toggle="collapse" data-target="#topico"><i class="fa fa-fw fa-arrow-circle-right"></i> Tópico <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="topico" class="collapse">
-                            <li>
-                                <a class="btnBuscaTop">Buscar Tópico</a>
+                                <a href="?acao=RemoveMapa"> Remover Prateleira</a>
                             </li>
                             <li>
-                                <a href="?acao=FormTopico"> Adiciona Tópico</a>
+                                <a href="?acao=ListaCurso">Consultar Prateleira</a>
+                            </li>
+                            <li>
+                                <a href="?acao=ListaCurso">Editar Prateleira</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a data-toggle="collapse" data-target="#questao"><i class="fa fa-fw fa-arrow-circle-right"></i> Questão <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="questao" class="collapse">
+                        <a data-toggle="collapse" data-target="#produtos"><i class="fa fa-fw"></i> Produtos <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="produtos" class="collapse">
                             <li>
-                                <a class="btnBuscaQuest">Buscar Questão</a>
+                                <a href="?acao=FormMapa">Adicionar Produtos</a>
                             </li>
                             <li>
-                                <a href="?acao=FormQuestao"> Adiciona Questão</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a data-toggle="collapse" data-target="#instituicao"><i class="fa fa-fw fa-arrow-circle-right"></i> Instituição de Ensino<i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="instituicao" class="collapse">
-                            <li>
-                                <a class="btnBuscaInst">Buscar Instituição</a>
+                                <a href="?acao=RemoveMapa"> Remover Produtos</a>
                             </li>
                             <li>
-                                <a href="?acao=InsereIstituicao">Adicionar Instituição</a>
+                                <a href="?acao=ListaCurso">Consultar Produtos</a>
+                            </li>
+                            <li>
+                                <a href="?acao=ListaCurso">Editar Produtos</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a data-toggle="collapse" data-target="#ranking"><i class="fa fa-fw fa-arrow-circle-right"></i> Ranking <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="ranking" class="collapse">
-                            <li>
-                                <a href="?acao=ranking">Ranking por Cursos</a>
-                            </li>
-                            <li>
-                                <a href="?acao=visualizaCurso">Ranking por Instituição</a>
-                            </li>
-                            <li>
-                                <a href="?acao=visualizaCurso">Ranking Geral</a>
-                            </li>
-                        </ul>
+                        <a href="?acao=ListaCurso">Ranking de Produtos</a>
                     </li>
                     <li>
-                        <a href="index.html"><i class="fa fa-fw fa-envelope"></i> Gerar Testes</a>
-                    </li>
-                    <li>
-                        <a href="?acao=ListaEstudante"><i class="fa fa-fw fa-user"></i> Estudantes</a>
-                    </li>
-                    <li>
-                        <a href="?acao=ListaProfessor"><i class="fa fa-fw fa-user"></i> Professor</a>
-                    </li>
-                    <li>
-                        <a href="index.html"><i class="fa fa-fw fa-envelope"></i> Relatório de Questões</a>
+                        <a href="?acao=ListaCurso">Menor Caminho</a>
                     </li>
                 </ul>
             </div>
@@ -317,37 +262,6 @@
             </div>
         </div>
         
-        <!-- Formulario para Criacao de Curso -->
-        <div class="modal fade container" id="modalInsereCurso" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span aria-hidden="true">&times;</span>
-                            <span class="sr-only">Fechar</span>
-                        </button>
-                        <h4 class="modal-title">Adicionar Curso </h4>
-                    </div>
-                    <form method="post" action="" id="formInsereCurso">
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <span class="form-group-addon">Nome do Curso</span>
-                                <input type="text" class="form-control obrigatorio" placeholder="Nome" name="nome">
-                            </div>
-                            <div class="form-group">
-                                <span class="form-group-addon">Insira uma descricao do Curso</span>
-                                <textarea class="form-control obrigatorio" rows="4" name="descricao"></textarea>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Registrar</button>
-                            </div>
-                        </div>
-                        <input type="hidden" name="id">
-                    </form>
-                </div>
-            </div>
-        </div>
-        
         <!-- Formulário para edição de Usuario-->
         <div class="modal fade" id="modalEditaUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -377,80 +291,6 @@
             </div>
         </div>
 
-        <!-- Formulário para edição de Estudante-->
-        <div class="modal fade" id="modalEditaEstudante" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="">Editar Estudante</h4>
-                    </div>
-                    <form method="post" action="EditaEstudante" class="formEdita" id="formEditaEstudante">
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <span class="form-group-addon">Nome</span>
-                                <input type="text" class="form-control obrigatorio" placeholder="Nome" name="nome">
-                            </div>
-                            <div class="form-group">
-                                <span class="form-group-addon">E-mail</span>
-                                <input type="email" class="form-control obrigatorio" placeholder="email@exemplo.com" name="email">
-                            </div>
-                            <div class="form-group">
-                                <span class="form-group-addon">Usuário</span>
-                                <input type="text" class="form-control obrigatorio" placeholder="Login" name="usuario">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Atualizar</button>
-                            </div>
-                        </div>
-                        <input type="hidden" name="id">
-                        <input type="hidden" name="idUsuario">
-                    </form>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Formulário para edição de Professor-->
-        <div class="modal fade" id="modalEditaProfessor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="">Editar Professor</h4>
-                    </div>
-                    <form method="post" action="EditaProfessor" class="formEdita" id="formEditaProfessor">
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <span class="form-group-addon">Nome</span>
-                                <input type="text" class="form-control obrigatorio" placeholder="Nome" name="nome">
-                            </div>
-                            <div class="form-group">
-                                <span class="form-group-addon">E-mail</span>
-                                <input type="email" class="form-control obrigatorio" placeholder="email@exemplo.com" name="email">
-                            </div>
-                            <div class="form-group">
-                                <span class="form-group-addon">Usuário</span>
-                                <input type="text" class="form-control obrigatorio" placeholder="Login" name="usuario">
-                            </div>
-                            <div class="form-group">
-                                <span class="form-group-addon">Titulação</span>
-                                <input type="text" class="form-control obrigatorio" placeholder="Título" name="titulacao">
-                            </div>
-                            <div class="form-group">
-                                <span class="form-group-addon">Área de Atuação</span>
-                                <input type="text" class="form-control obrigatorio" placeholder="Área de Atuação" name="areaAtuacao">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Atualizar</button>
-                            </div>
-                        </div>
-                        <input type="hidden" name="id">
-                        <input type="hidden" name="idUsuario">
-                    </form>
-                </div>
-            </div>
-        </div>
-        
     <!-- Formulário para edição de Curso-->
         <div class="modal fade" id="modalEditaCurso" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -481,87 +321,6 @@
                 </div>
             </div>
         </div>
-
-    <!-- Formulário para insercao de Materia-->
-        <div class="modal fade" id="modalInsereMateria" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="textoInsere">Inserção de Matéria</h4>
-                    </div>
-                    <form method="post" class="formInsereMateria" id="formInsereMateria">
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label>Nome da Matéria</label>
-                                <input type="text" class="form-control obrigatorio" placeholder="Nome" name="nome">
-                            </div>
-                            <div class="form-group">
-                                <label>Descrição da Matéria</label>
-                                <textarea class="form-control obrigatorio" rows="4" name="descricao"></textarea>
-                            </div>
-                            
-                            <div class="modal-footer">
-                                <button class="btn btn-warning" type="reset">Resetar</button>
-                                <button type="submit" class="btn btn-primary">Salvar</button>
-                            </div>
-                        </div>
-                        <input type="hidden" name="idCurso">
-                        <input type="hidden" name="id">
-                    </form>
-                </div>
-            </div>
-        </div>
-    <!-- Fim modal InsereMateria -->
-    
-    <!-- Formulário para edição de Curso -->
-        <div class="modal fade" id="modalEditaQuestao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="">Informações da Questão</h4>
-                    </div>
-                    <form method="post" class="formEditaQuestao" id="formEditaQuestao">
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label>Nome da Questão</label>
-                                <input disabled="disabled" type="text" class="form-control obrigatorio" placeholder="Nome" name="nome">
-                            </div>
-                            <div class="form-group">
-                                <label>Enunciado: </label>
-                                <textarea disabled="disabled" class="form-control obrigatorio" rows="4" name="enunciado"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Resposta A</label>
-                                <textarea disabled="disabled" class="form-control obrigatorio" rows="4" name="respostaA"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Resposta B</label>
-                                <textarea disabled="disabled" class="form-control obrigatorio" rows="4" name="respostaB"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Resposta C</label>
-                                <textarea disabled="disabled" class="form-control obrigatorio" rows="4" name="respostaC"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Resposta D</label>
-                                <textarea disabled="disabled" class="form-control obrigatorio" rows="4" name="respostaD"></textarea>
-                            </div>
-
-                            <div class="modal-footer">
-                                <button class="btn btn-primary editarCamposQuestao">Editar</button>
-                                <button disabled="disabled" type="submit" class="btn btn-primary salvarCamposQuestao">Salvar</button>
-                                <button class="btn btn-warning removerCamposCurso">Remover</button>
-                            </div>
-                        </div>
-                        <input type="hidden" name="id">
-                    </form>
-                </div>
-            </div>
-        </div>
-
-    
     <!-- Modais -->
     
     <!-- jQuery -->

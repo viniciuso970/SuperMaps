@@ -52,7 +52,7 @@ $("#formEditaPerfilUsuario").submit(function(e) {
         },
         async: false
     });
-    setTimeout(function() { window.location.replace("index.php?acao=ListaCurso") }, 2000);
+    setTimeout(function() { window.location.replace("index.php?acao=ConsultaMapa") }, 2000);
 });
 
 $(".editarPessoa").click(function(e) {

@@ -48,15 +48,13 @@ $("#formAddMapa").submit(function (e) {
         success: function (retornoPost) {
             // Recebe a resposta e mostra se ocorreu erro ou não
             var retornoPost = JSON.parse(retornoPost);
+            console.log(retornoPost);
             $("#status .modal-title").html(retornoPost.erro ? "Erro" : "Sucesso");
             $("#status .modal-body").html(retornoPost.msg);
             $("#status").modal("show");
         },
         async: false
     });
-    setTimeout(function () {
-        window.location.replace("index.php?acao=ListaCurso")
-    }, 2000);
     return false;
 
 });

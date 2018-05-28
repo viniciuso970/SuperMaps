@@ -112,27 +112,6 @@
                                 <span class="form-group-addon">Senha</span>
                                 <input type="password" class="form-control obrigatorio" placeholder="Senha" name="senha">
                             </div>
-                            <div class="form-group">
-                                <span class="form-group-addon">Classificação</span>
-                                <div class="input-group col-md-12">
-                                    <div class="col-md-4">
-                                        <input class="col-md-1" type="radio" id="radioEstudante" name="classificacao" value="2">
-                                        <span class="col-md-11">Estudante</span>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input class="col-md-1" type="radio" id="radioProfessor" name="classificacao" value="1">
-                                        <span class="col-md-11">Professor</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group dados-professor" id="titulacao">
-                                <span class="form-group-addon" title="textoTitulacao">Titulacao</span>
-                                <input type="text" class="form-control obrigatorio-prof" placeholder="Titulacao" name="titulacao">
-                            </div>
-                            <div class="form-group dados-professor" id="areaAtuacao">
-                                <span class="form-group-addon" title="textoAtuacao">Área de Atuação</span>
-                                <input type="text" class="form-control obrigatorio-prof" placeholder="Área de Atuação" name="areaAtuacao">
-                            </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary">Registrar</button>
                             </div>

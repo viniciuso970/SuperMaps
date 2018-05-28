@@ -4,7 +4,7 @@
  * Professor = 1
  * Estudante = 2
  * 
- * Admin = Estudantes, Professor, Relatório de Questões
+ * Admin = Estudantes, Professor, Relatï¿½rio de Questï¿½es
  * Professor = Estudantes
  * Estudante = Gerar Teste
  */
@@ -52,7 +52,7 @@ $("#formLogin").submit(function(e) {
         success: function (retornoPost) {
             var retornoPost = JSON.parse(retornoPost);
             if(!retornoPost.erro) {
-                setTimeout(function() { window.location.replace("index.php?acao=ListaCurso")}, 2000);
+                setTimeout(function() { window.location.replace("index.php?acao=ConsultaMapa")}, 2000);
             } else {
                 jQuery("#status .modal-title").html("Erro");
                 jQuery("#status .modal-body").html(retornoPost.msg);

@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Sala de Aula</title>
+        <title>SuperMaps</title>
 
         <!-- css -->
         <link rel="stylesheet" href="bootstrap-3.3.7/dist/css/bootstrap.min.css">
@@ -32,8 +32,7 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center inner">
                         <div class="animatedParent">
-                            <h1>Sala de Aula</h1>
-                            <h3>Um site desenvolvido por estudantes, para estudantes</h3>
+                            <h1>SuperMaps</h1>
                         </div>
                     </div>
                 </div>
@@ -53,7 +52,7 @@
                     <div class="row">
                         <div class="col-md-2">
                             <div class="site-logo">
-                                <a href="#" class="brand">Sala de Aula</a>
+                                <a href="#" class="brand">SuperMaps</a>
                             </div>
                         </div>
                         <div class="col-md-10">
@@ -69,7 +68,6 @@
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="active"><a href="#intro">Home</a></li>
                                     <li><a href="#about">Sobre</a></li>
-                                    <li><a href="#service">Servicos</a></li>
                                     <li><a href="#contact">Contato</a></li>
                                     <li><a class="btnRegistrar" href="?">Registro</a></li>
                                     <li><a class="btnLogin" href="?">Login</a></li>
@@ -92,114 +90,30 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="animatedParent">
                             <div class="section-heading text-center animated bounceInDown">
-                                <h2 class="h-bold">Sobre o Sala de Aula</h2>
+                                <h2 class="h-bold">Sobre o SuperMaps</h2>
                                 <div class="divider-header"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <div class="container">
-
-
                 <div class="row">
-
-
                     <div class="col-lg-8 col-lg-offset-2 animatedParent">
                         <div class="text-center">
                             <p>
-                                Este site visa auxiliar estudantes que desejam treinar seus conhecimentos por meio de um banco de questões criadas pelos usuários e verificadas por professores de determinada
-                                matéria e curso do ensino superior. Por meio de testes, o aluno poderá avaliar seus conhecimentos e analisar seu desempenho consultando o
-                                ranking que é gerado de acordo com o número de questões respondidas ou com base nos testes realizados.
+                                Site com o intuito de agilizar as compras dos clientes da maneira mais eficiente possível, determinando uma mapa com o menor caminho para o cliente adquirir todos os seus produtos.
                             </p>
                             <a href="#service" class="btn btn-skin btn-scroll">O que oferecemos</a>
                         </div>
                     </div>
-
-
                 </div>
             </div>
 
         </section>
         <!-- /Section: about -->
 
-
-        <!-- Section: services -->
-        <section id="service" class="home-section color-dark bg-gray">
-            <div class="container marginbot-50">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div>
-                            <div class="section-heading text-center">
-                                <h2 class="h-bold">O que pode ser feito</h2>
-                                <div class="divider-header"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="text-center">
-                <div class="container">
-
-                    <div class="row animatedParent">
-                        <div class="col-md-4">
-                            <div class="animated rotateInDownLeft">
-                                <div class="service-box">
-                                    <div class="service-icon">
-                                        <span class="fa fa-laptop fa-2x"></span>
-                                    </div>
-                                    <div class="service-desc">
-                                        <h5>Respostas às questões</h5>
-                                        <div class="divider-header"></div>
-                                        <p>
-                                            Um grupo de questões selecionadas por professores, para que possa acrescentar conhecimento sobre o determinado tópico.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="animated rotateInDownLeft slow">
-                                <div class="service-box">
-                                    <div class="service-icon">
-                                        <span class="fa fa-camera fa-2x"></span>
-                                    </div>
-                                    <div class="service-desc">
-                                        <h5>Testes</h5>
-                                        <div class="divider-header"></div>
-                                        <p>
-                                            O Sala de Aula permite que o aluno gere teste com base em tópicos e matérias do curso que ele selecionar
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="animated rotateInDownLeft slower">
-                                <div class="service-box">
-                                    <div class="service-icon">
-                                        <span class="fa fa-code fa-2x"></span>
-                                    </div>
-                                    <div class="service-desc">
-                                        <h5>Ranking</h5>
-                                        <div class="divider-header"></div>
-                                        <p>
-                                            O Sala de Aula com base nas quantidade de questões respondidas pelo estudante gera um ranking dos alunos que mais responderam corretamente questoes
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- /Section: services -->
 
         <!-- Section: contact -->
         <section id="contact" class="home-section nopadd-bot color-dark bg-gray text-center">
@@ -266,7 +180,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-right copyright">
-                        &copy;Copyright - Sala de Aula. All Rights Reserved
+                        &copy;Copyright - SuperMaps. All Rights Reserved
                     </div>
                 </div>
             </div>
