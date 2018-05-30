@@ -11,7 +11,7 @@ class ConsultaMapa
                 $altura = $mapa["altura"];
                 $largura = $mapa["largura"];
                 $table = "";
-                $template = new Template("view/Telas/ConsultaMapa.tpl");
+                $template = new Template("view/Mapa/ConsultaMapa.tpl");
                 for ($i = 0; $i < $altura; $i++) {
                     $table .= '<tr>';
                     for ($j = 0; $j < $largura; $j++) {

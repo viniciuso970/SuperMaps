@@ -81,33 +81,16 @@
                         <a data-toggle="collapse" data-target="#prateleira"><i class="fa fa-fw"></i> Prateleira <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="prateleira" class="collapse">
                             <li>
-                                <a href="?acao=FormMapa">Adicionar Prateleira</a>
+                                <a href="?acao=FormPrateleira">Adicionar Prateleira</a>
                             </li>
                             <li>
-                                <a href="?acao=RemoveMapa"> Remover Prateleira</a>
+                                <a href="?acao=RemovePrateleira"> Remover Prateleira</a>
                             </li>
                             <li>
-                                <a href="?acao=ListaCurso">Consultar Prateleira</a>
+                                <a href="?acao=ConsultaPrateleira">Consultar Prateleira</a>
                             </li>
                             <li>
-                                <a href="?acao=ListaCurso">Editar Prateleira</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a data-toggle="collapse" data-target="#produtos"><i class="fa fa-fw"></i> Produtos <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="produtos" class="collapse">
-                            <li>
-                                <a href="?acao=FormMapa">Adicionar Produtos</a>
-                            </li>
-                            <li>
-                                <a href="?acao=RemoveMapa"> Remover Produtos</a>
-                            </li>
-                            <li>
-                                <a href="?acao=ListaCurso">Consultar Produtos</a>
-                            </li>
-                            <li>
-                                <a href="?acao=ListaCurso">Editar Produtos</a>
+                                <a href="?acao=EditaPrateleira">Editar Prateleira</a>
                             </li>
                         </ul>
                     </li>

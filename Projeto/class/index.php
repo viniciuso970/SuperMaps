@@ -1,6 +1,7 @@
 <?php
     function __autoload($classe) {
-	    $pastas = array('model', 'controller', 'controller/Login', 'controller/EntidadesFisicas', 'controller/Mapa', 'controller/Topico', 'controller/Materia', 'controller/Questao');
+        $pastas = array('model', 'controller', 'controller/Login', 'controller/EntidadesFisicas', 
+        'controller/Mapa', 'controller/Prateleira');
 	    foreach ($pastas as $pasta) {
             if (file_exists("{$pasta}/{$classe}.class.php")) {
                 include_once "{$pasta}/{$classe}.class.php";

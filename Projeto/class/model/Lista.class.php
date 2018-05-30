@@ -1,7 +1,7 @@
 <?php
 
 class Lista {
-    public static function verificarMapa($tabela) {
+    public static function verificarExiste($tabela) {
 	$registro = ORM::for_table($tabela)->find_array();
 	if(count($registro) > 0) {
 		$retorno = true;

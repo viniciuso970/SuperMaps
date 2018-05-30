@@ -3,7 +3,7 @@
 class FormRemoveMapa {
     public function controller() {
         try {
-            $template = new Template("view/Telas/RemoveMapa.tpl");
+            $template = new Template("view/Mapa/RemoveMapa.tpl");
             $retorno["erro"] = false;
             $retorno["msg"] = $template->saida();
         } catch (Exception $ex) {

@@ -1,11 +1,9 @@
 <?php
 
-class FormMapa {
+class FormPrateleira {
     public function controller() {
         try {
-            $template = new Template("view/Mapa/InsereMapa.tpl");
-            $template->set("largura", 10);
-            $template->set("altura", 10);
+            $template = new Template("view/Prateleira/InserePrateleira.tpl");
             $retorno["erro"] = false;
             $retorno["msg"] = $template->saida();
         } catch (Exception $ex) {

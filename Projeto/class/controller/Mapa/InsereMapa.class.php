@@ -3,7 +3,7 @@
 class InsereMapa {
     public function controller() {
         try {
-            $existeMapa = Lista::verificarMapa("mapa");
+            $existeMapa = Lista::verificarExiste("mapa");
             if($existeMapa) {
                 $retorno["erro"] = true;
                 $retorno["msg"] = "Erro ao criar o Mapa, já existe um Mapa no sistema\n";
