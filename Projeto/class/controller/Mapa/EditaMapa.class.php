@@ -1,16 +1,11 @@
 <?php
 
 class EditaMapa {
-    public function controller(){
-        $template = new Template("view/Telas/EditaMapa.tpl");
-        $consulta = ORM::for_table("mapa")->find_array();;
-        $mapa = $consulta[0];
-        $altura = $mapa["altura"];
-        $largura = $mapa["largura"];
-        $template->set("altura", $altura);   
-        $template->set("largura", $largura);
-        $retorno["erro"] = false;
-        $retorno["msg"] = $template->saida();
+    public function controller() {
+        $valores = array();
+        $valores["largura"] = $_POST["largura"];
+        $valores["altura"] = $_POST["altura"];
+        return Altera::alterarRegistro("mapa", 0, $valores);
     }
 }
 

@@ -67,13 +67,13 @@
                                 <a href="?acao=FormMapa">Adicionar Mapa</a>
                             </li>
                             <li>
-                                <a href="?acao=RemoveMapa"> Remover Mapa</a>
+                                <a href="?acao=FormRemoveMapa"> Remover Mapa</a>
                             </li>
                             <li>
                                 <a href="?acao=ConsultaMapa">Consultar Mapa</a>
                             </li>
                             <li>
-                                <a href="?acao=EditaMapa">Editar Mapa</a>
+                                <a href="?acao=FormEditaMapa">Editar Mapa</a>
                             </li>
                         </ul>
                     </li>

@@ -1,11 +1,9 @@
 <?php
 class Remove {
     
-    
     public static function removePorId($tabela, $id) {
         try {
             $registro = ORM::for_table($tabela)->find_one($id);
-            
             if($registro) {
                 $registro->delete();
                 $retorno["erro"] = false;

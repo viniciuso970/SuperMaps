@@ -1,7 +1,6 @@
 <?php
 
 class ListaMateria {
-
     public function controller() {
         try {
             $tabela = "materia";
@@ -17,7 +16,5 @@ class ListaMateria {
         }
         return $retorno;
     }
-
 }
-
 ?>
