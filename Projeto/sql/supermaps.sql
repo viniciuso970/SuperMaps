@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2018 at 01:32 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: 04-Jun-2018 às 14:32
+-- Versão do servidor: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mapa`
+-- Estrutura da tabela `mapa`
 --
 
 CREATE TABLE `mapa` (
@@ -35,7 +35,7 @@ CREATE TABLE `mapa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mapa`
+-- Extraindo dados da tabela `mapa`
 --
 
 INSERT INTO `mapa` (`id`, `largura`, `altura`) VALUES
@@ -44,21 +44,26 @@ INSERT INTO `mapa` (`id`, `largura`, `altura`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prateleira`
+-- Estrutura da tabela `prateleira`
 --
 
 CREATE TABLE `prateleira` (
   `id` int(11) NOT NULL,
   `andar` int(11) NOT NULL,
-  `produtoAndar` int(11) NOT NULL,
-  `x` int(11) DEFAULT NULL,
-  `y` int(11) DEFAULT NULL
+  `produtoAndar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `prateleira`
+--
+
+INSERT INTO `prateleira` (`id`, `andar`, `produtoAndar`) VALUES
+(0, 4, 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -69,11 +74,10 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `usuario`, `email`, `senha`) VALUES
-(0, 'vinicius123', 'viniciuso970@gmail.com', 'vinicius123'),
 (1, 'vinicius', 'vinicius@mail.com', 'vinicius'),
 (2, 'professor', 'professor@mail.com', 'professor');
 

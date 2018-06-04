@@ -84,7 +84,7 @@
                                 <a href="?acao=FormPrateleira">Adicionar Prateleira</a>
                             </li>
                             <li>
-                                <a href="?acao=RemovePrateleira"> Remover Prateleira</a>
+                                <a href="?acao=FormRemovePrateleira"> Remover Prateleira</a>
                             </li>
                             <li>
                                 <a href="?acao=ConsultaPrateleira">Consultar Prateleira</a>

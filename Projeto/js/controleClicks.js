@@ -154,6 +154,33 @@ $("#removerMapa").submit(function (e) {
     return false;
 });
 
+$("#removerPrateleira").submit(function (e) {
+	e.preventDefault();
+	var $formRemove = $("removerPrateleira");
+	var dados = $formRemove.serialize();
+
+	$.ajax({
+		url: "class/index.php?acao=RemovePrateleira",
+		data: dados,
+		type: 'POST',
+		success: function (retornoPost) {
+			var retornoPost = JSON.parse(retornoPost);
+			$("#status .modal-title").html(retornoPost.erro ? "Erro" : "Sucesso");
+			$("#status .modal-body").html(retornoPost.msg);
+			$("#status").modal("show");
+		},
+		async: false
+	});
+	//setTimeout(function () {window.location.replace("index.php?acao=FormPrateleira")}, 2000);
+});
+
+$(document).on("click", "#verPrateleira", function (e) {
+	var celula = $(this);
+	var posX = celula.attr("posX");
+	var posY = celula.attr("posY");
+	console.log("("+posX+","+posY+")");
+});
+
 function recarregarLista() {
     if (location.search.includes("acao=Lista")) {
         setTimeout(location.reload(), 2000);

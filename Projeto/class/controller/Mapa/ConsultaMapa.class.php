@@ -11,11 +11,22 @@ class ConsultaMapa
                 $altura = $mapa["altura"];
                 $largura = $mapa["largura"];
                 $table = "";
+		$consultaPrateleira = ORM::for_table("prateleira")->find_array();
+		if($consultaPrateleira) {
+			$prateleira = $consultaPrateleira[0];
+			$andar = $prateleira["andar"];
+			$produtoAndar = $prateleira["produtoAndar"];
+			$texto = "(".$andar.",".$produtoAndar.")";
+			$title = "(Andar,Produto)";
+		} else {
+			$texto = "Adicionar Prateleira";
+			$title = "É necessário adicionar uma Prateleira";
+		}
                 $template = new Template("view/Mapa/ConsultaMapa.tpl");
                 for ($i = 0; $i < $altura; $i++) {
                     $table .= '<tr>';
                     for ($j = 0; $j < $largura; $j++) {
-                        $table .= '<th> <a href="#"> Adicionar Prateleira </a> </th>';
+                        $table .= '<th posX='.$i.' posY='.$j.' id="verPrateleira"> <a href="#" title='.$title.'> '.$texto .'</a> </th>';
                     }
                     $table .= '</tr>';
                 }

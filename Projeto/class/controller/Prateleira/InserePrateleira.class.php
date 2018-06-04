@@ -4,7 +4,6 @@ class InserePrateleira {
     public function controller() {
         try {
             $existeprateleira = Lista::verificarExiste("prateleira");
-            alert("oioi");
             if($existeprateleira) {
                 $retorno["erro"] = true;
                 $retorno["msg"] = "Erro ao criar a Prateleira, já existe uma prateleira no sistema\n";
@@ -15,7 +14,7 @@ class InserePrateleira {
             $prateleira->produtoAndar = $_POST["produtoAndar"];
             $prateleira->save();
             $retorno["erro"] = false;
-            $retorno["msg"] = "prateleira criado com sucesso";
+            $retorno["msg"] = "Prateleira criada com sucesso";
         } catch (Exception $ex) {
             $retorno["erro"] = true;
             $retorno["msg"] = "Erro ao criar a prateleira\n".$ex->getMessage()."\n";
