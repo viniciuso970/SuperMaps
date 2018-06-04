@@ -11,37 +11,13 @@ class PerfilUsuario {
             }
             
             $id = $_SESSION["id"];
-            if($_SESSION["nivel"] == 0) {
-                // Admin
-                $tabela = "usuario";
-                $professor = "";
-            } else if($_SESSION["nivel"] == 1) {
-                // Professor
-                $tabela = "professor";
-                $professor = (new Template("view/Usuario/EditaUsuarioProfessor.tpl"))->saida();
-            } else if($_SESSION["nivel"] == 2) {
-                // Estudante
-                $tabela = "estudante";
-                $professor = "";
-            }
-            $perfil->set("PerfilProfessor", $professor);
+            $tabela = "usuario";
             
             $resultado = Lista::buscaPorId($id, $tabela);
             if(!$resultado["erro"]) {
                 $registro = $resultado["msg"];
                 $perfil->set("id", $registro["id"]);
-                $perfil->set("nome", $registro["nome"]);
-                if($_SESSION["nivel"] == 1) {
-                    $perfil->set("titulacao", $registro->titulacao);
-                    $perfil->set("areaAtuacao", $registro->areaAtuacao);
-                }
-                
-                if($_SESSION["nivel"] != 0) {
-                    $resultadoUsuario = Lista::buscaPorId($registro["idUsuario"], "usuario");
-                    if(!$resultadoUsuario["erro"]) {
-                        $registro = $resultadoUsuario["msg"];
-                    }
-                }
+                $perfil->set("usuario", $registro["usuario"]);
                 $perfil->set("email", $registro["email"]);
                 
                 $retorno["erro"] = false;

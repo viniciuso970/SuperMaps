@@ -90,12 +90,21 @@
                                 <a href="?acao=ConsultaPrateleira">Consultar Prateleira</a>
                             </li>
                             <li>
-                                <a href="?acao=EditaPrateleira">Editar Prateleira</a>
+                                <a href="?acao=FormEditaPrateleira">Editar Prateleira</a>
                             </li>
                         </ul>
                     </li>
                     <li>
+                        <a href="?acao=ListaCurso">Inserir Produtos na Prateleira</a>
+                    </li>
+                    <li>
+                        <a href="?acao=ListaCurso">Inserir Prateleira no Mapa</a>
+                    </li>
+                    <li>
                         <a href="?acao=ListaCurso">Ranking de Produtos</a>
+                    </li>
+                    <li>
+                        <a href="?acao=ListaCurso">Relatório de Itens mais visitados</a>
                     </li>
                     <li>
                         <a href="?acao=ListaCurso">Menor Caminho</a>

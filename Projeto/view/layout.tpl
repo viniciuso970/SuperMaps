@@ -97,10 +97,6 @@
                     <form method="post" action="" id="formInsere">
                         <div class="modal-body">
                             <div class="form-group">
-                                <span class="form-group-addon">Nome Completo</span>
-                                <input type="text" class="form-control obrigatorio" placeholder="Nome" name="nome">
-                            </div>
-                            <div class="form-group">
                                 <span class="form-group-addon">E-mail</span>
                                 <input type="email" class="form-control obrigatorio" placeholder="email@exemplo.com" name="email">
                             </div>

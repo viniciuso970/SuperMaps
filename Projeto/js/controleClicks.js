@@ -86,6 +86,43 @@ $("#formAddPrateleira").submit(function (e) {
     return false;
 });
 
+$("#formEditaPerfilUsuario").submit(function (e) {
+    // Previne que o browser abra o link
+    e.preventDefault();
+    // Encontra a form no html
+    var $formInsere = $("#formEditaPerfilUsuario");
+
+    // Verifica se todos os campos necessários foram preenchidos
+    if (!validarCampos($formInsere)) {
+        alert("Campo obrigatório não preenchido");
+        return false;
+    }
+
+    // Monta o json com os dados da form
+    var dados = $formInsere.serialize();
+
+
+    // Define a ação do PHP
+    $.ajax({
+        url: "class/index.php?acao=EditaPerfilUsuario",
+        data: dados,
+        type: 'POST',
+        success: function (retornoPost) {
+            // Recebe a resposta e mostra se ocorreu erro ou não
+            var retornoPost = JSON.parse(retornoPost);
+            $("#status .modal-title").html(retornoPost.erro ? "Erro" : "Sucesso");
+            $("#status .modal-body").html(retornoPost.msg);
+            $("#status").modal("show");
+        },
+        async: false
+    });
+    setTimeout(function () {
+        window.location.replace("index.php?acao=PerfilUsuario")
+    }, 2000);
+    return false;
+
+});
+
 
 $("#formEditaMapa").submit(function (e) {
     // Previne que o browser abra o link
@@ -124,6 +161,42 @@ $("#formEditaMapa").submit(function (e) {
 
 });
 
+$("#formEditaPrateleira").submit(function (e) {
+    // Previne que o browser abra o link
+    e.preventDefault();
+    // Encontra a form no html
+    var $formInsere = $("#formEditaPrateleira");
+
+    // Verifica se todos os campos necessários foram preenchidos
+    if (!validarCampos($formInsere)) {
+        alert("Campo obrigatório não preenchido");
+        return false;
+    }
+
+    // Monta o json com os dados da form
+    var dados = $formInsere.serialize();
+
+
+    // Define a ação do PHP
+    $.ajax({
+        url: "class/index.php?acao=EditaPrateleira",
+        data: dados,
+        type: 'POST',
+        success: function (retornoPost) {
+            // Recebe a resposta e mostra se ocorreu erro ou não
+            var retornoPost = JSON.parse(retornoPost);
+            $("#status .modal-title").html(retornoPost.erro ? "Erro" : "Sucesso");
+            $("#status .modal-body").html(retornoPost.msg);
+            $("#status").modal("show");
+        },
+        async: false
+    });
+    setTimeout(function () {
+        window.location.replace("index.php?acao=ConsultaMapa")
+    }, 2000);
+    return false;
+
+});
 
 $("#removerMapa").submit(function (e) {
     // Previne que o browser abra o link
@@ -171,7 +244,9 @@ $("#removerPrateleira").submit(function (e) {
 		},
 		async: false
 	});
-	//setTimeout(function () {window.location.replace("index.php?acao=FormPrateleira")}, 2000);
+    setTimeout(function () {
+        window.location.replace("index.php?acao=FormPrateleira")
+    }, 2000);
 });
 
 $(document).on("click", "#verPrateleira", function (e) {

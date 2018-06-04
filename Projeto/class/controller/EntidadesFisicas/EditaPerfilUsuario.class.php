@@ -1,30 +1,16 @@
 <?php
 
 class EditaPerfilUsuario {
-    public  function pegaTabela() {
-        if($_SESSION["nivel"] == 0) {
-            // Admin
-            $tabela = "usuario";
-        } else if($_SESSION["nivel"] == 1) {
-            // Professor
-            $tabela = "professor";
-        } else if($_SESSION["nivel"] == 2) {
-            // Estudante
-            $tabela = "estudante";
-        }
-        return $tabela;
-    }
 
     public function controller() {
         ControlaSessao::iniciaSessao();
         // IMPORTANTE, ALTERAR, PARA VERIFICAÇAO CORRETA
         $id = $_SESSION["id"];
-        $tabela = $this->pegaTabela();
-        $resultado = Lista::buscaPorId($id, $tabela);
+        $resultado = Lista::buscaPorId($id, "usuario");
         if(!$resultado["erro"]) {
             $usuarioLogado = $resultado["msg"];
             
-            $id = $usuarioLogado["idUsuario"];
+            $id = $usuarioLogado["id"];
             $idUsuarioLogado = $id;
             $tabela = "usuario";
             $resultado = Lista::buscaPorId($id, $tabela);
@@ -40,26 +26,14 @@ class EditaPerfilUsuario {
             $retorno["msg"] = "Usuário não encontrado";
             return $retorno;
         }
-        
-        if($_SESSION["nivel"] == 0) {
-            // Admin
-            $campos = array("email", "senha");
-        } else if($_SESSION["nivel"] == 1) {
-            // Professor
-            $campos = array("nome", "titulacao", "areaAtuacao");
-        } else if($_SESSION["nivel"] == 2) {
-            // Estudante
-            $campos = array("nome");
-        }
-        
+        $campos = array("email", "senha");
         $id = $_POST["id"];
-        $tabela = $this->pegaTabela();
         $valores = array();
         foreach($campos as $campo) {
             $valores[$campo] = $_POST[$campo];
         }
         
-        $retorno = Altera::alterarRegistro($tabela, $id, $valores);
+        $retorno = Altera::alterarRegistro("usuario", $id, $valores);
         
         if(!$retorno["erro"]) {
             $tabela = "usuario";
