@@ -26,7 +26,7 @@ class ConsultaMapa
                 for ($i = 0; $i < $altura; $i++) {
                     $table .= '<tr>';
                     for ($j = 0; $j < $largura; $j++) {
-                        $table .= '<th posX='.$i.' posY='.$j.' id="verPrateleira"> <a href="#" title='.$title.'> '.$texto .'</a> </th>';
+                        $table .= '<td posX='.$i.' posY='.$j.' id="verPrateleira"> <a href="#" title='.$title.'> '.$texto .'</a> </td>';
                     }
                     $table .= '</tr>';
                 }
