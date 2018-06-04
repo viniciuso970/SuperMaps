@@ -54,37 +54,21 @@ $("#formAddPrateleira").submit(function (e) {
     // Previne que o browser abra o link
     e.preventDefault();
     // Encontra a form no html
+
     var $formInsere = $("#formAddPrateleira");
 
-    // Verifica se todos os campos necessários foram preenchidos
-    if (!validarCampos($formInsere)) {
-        alert("Campo obrigatório não preenchido");
-        return false;
-    }
-
-    // Monta o json com os dados da form
-    var dados = $formInsere.serialize();
-
-    // Define a ação do PHP
-    var acao = $formInsere.attr("action");
-    $.ajax({
-        url: "class/index.php?acao=" + acao,
-        data: dados,
-        type: 'POST',
-        success: function (retornoPost) {
-            // Recebe a resposta e mostra se ocorreu erro ou não
-            var retornoPost = JSON.parse(retornoPost);
-            $("#status .modal-title").html(retornoPost.erro ? "Erro" : "Sucesso");
-            $("#status .modal-body").html(retornoPost.msg);
-            $("#status").modal("show");
-        },
-        async: false
-    });
-    setTimeout(function () {
-        window.location.replace("index.php?acao=ConsultaMapa")
-    }, 2000);
-    return false;
+    var produto = $("#produtoAdd").val();
+    var posX = getQueryVariable("posX");
+    var posY = getQueryVariable("posY");
+    window.location.replace("index.php?acao=FormProdPrat&produto="+produto+"&posX="+posX+"&posY="+posY);
 });
+
+$("#deletarPrateleira").click(function(e) {
+    var posX = getQueryVariable("posX");
+    var posY = getQueryVariable("posY");
+    window.location.replace("index.php?acao=FormRemovePrateleira&posX="+posX+"&posY="+posY);
+}
+);
 
 $("#formEditaPerfilUsuario").submit(function (e) {
     // Previne que o browser abra o link
@@ -231,30 +215,32 @@ $("#removerPrateleira").submit(function (e) {
 	e.preventDefault();
 	var $formRemove = $("removerPrateleira");
 	var dados = $formRemove.serialize();
-
-	$.ajax({
-		url: "class/index.php?acao=RemovePrateleira",
-		data: dados,
-		type: 'POST',
-		success: function (retornoPost) {
-			var retornoPost = JSON.parse(retornoPost);
-			$("#status .modal-title").html(retornoPost.erro ? "Erro" : "Sucesso");
-			$("#status .modal-body").html(retornoPost.msg);
-			$("#status").modal("show");
-		},
-		async: false
-	});
-    setTimeout(function () {
-        window.location.replace("index.php?acao=FormPrateleira")
-    }, 2000);
+    var posX = getQueryVariable("posX");
+    var posY = getQueryVariable("posY");
+    window.location.replace("index.php?acao=RemovePrateleira&posX="+posX+"&posY="+posY);
 });
 
-$(document).on("click", "#verPrateleira", function (e) {
-	var celula = $(this);
-	var posX = celula.attr("posX");
-	var posY = celula.attr("posY");
-	console.log("("+posX+","+posY+")");
+$("#editarPrateleira").click(function (e) {
+	e.preventDefault();
+	var $formRemove = $("editarPrateleira");
+	var dados = $formRemove.serialize();
+    var posX = getQueryVariable("posX");
+    var posY = getQueryVariable("posY");
+    window.location.replace("index.php?acao=FormEditaPrateleira&posX="+posX+"&posY="+posY);
 });
+
+
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for(var i = 0; i< vars.length; i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == variable) {
+            return pair[1];
+        }
+    }
+    return false;
+}
 
 function recarregarLista() {
     if (location.search.includes("acao=Lista")) {

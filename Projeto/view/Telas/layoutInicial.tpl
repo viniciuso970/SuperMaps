@@ -95,12 +95,6 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="?acao=ListaCurso">Inserir Produtos na Prateleira</a>
-                    </li>
-                    <li>
-                        <a href="?acao=ListaCurso">Inserir Prateleira no Mapa</a>
-                    </li>
-                    <li>
                         <a href="?acao=ListaCurso">Ranking de Produtos</a>
                     </li>
                     <li>

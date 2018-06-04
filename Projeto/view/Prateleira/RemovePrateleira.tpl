@@ -16,6 +16,7 @@
                                 <label>Deseja Remover a Prateleira?</label>
                             </div>
                             <button type="submit" class="btn btn-danger">Sim</button>
+                            <a class="btn btn-primary" href="?acao=ConsultaMapa">Voltar</a>
                         </form>
                     </div>
                 </div>
