@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Jun-2018 às 14:32
--- Versão do servidor: 10.1.25-MariaDB
--- PHP Version: 7.1.7
+-- Generation Time: Jun 04, 2018 at 08:53 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `mapa`
+-- Table structure for table `mapa`
 --
 
 CREATE TABLE `mapa` (
@@ -35,16 +35,16 @@ CREATE TABLE `mapa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `mapa`
+-- Dumping data for table `mapa`
 --
 
 INSERT INTO `mapa` (`id`, `largura`, `altura`) VALUES
-(0, 10, 10);
+(0, 11, 10);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `prateleira`
+-- Table structure for table `prateleira`
 --
 
 CREATE TABLE `prateleira` (
@@ -54,7 +54,7 @@ CREATE TABLE `prateleira` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `prateleira`
+-- Dumping data for table `prateleira`
 --
 
 INSERT INTO `prateleira` (`id`, `andar`, `produtoAndar`) VALUES
@@ -63,7 +63,31 @@ INSERT INTO `prateleira` (`id`, `andar`, `produtoAndar`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Table structure for table `produto`
+--
+
+CREATE TABLE `produto` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `preco` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `produto_prateleira`
+--
+
+CREATE TABLE `produto_prateleira` (
+  `id` int(11) NOT NULL,
+  `id_produto` int(11) DEFAULT NULL,
+  `id_prateleira` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -74,7 +98,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `usuario`, `email`, `senha`) VALUES
@@ -98,11 +122,51 @@ ALTER TABLE `prateleira`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `produto`
+--
+ALTER TABLE `produto`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `produto_prateleira`
+--
+ALTER TABLE `produto_prateleira`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_produto` (`id_produto`),
+  ADD KEY `id_prateleira` (`id_prateleira`);
+
+--
 -- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `usuario` (`usuario`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `produto`
+--
+ALTER TABLE `produto`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `prateleira`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `produto_prateleira`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `produto_prateleira`
+--
+ALTER TABLE `produto_prateleira`
+  ADD CONSTRAINT `produto_prateleira_ibfk_1` FOREIGN KEY (`id_produto`) REFERENCES `produto` (`id`),
+  ADD CONSTRAINT `produto_prateleira_ibfk_2` FOREIGN KEY (`id_prateleira`) REFERENCES `prateleira` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
