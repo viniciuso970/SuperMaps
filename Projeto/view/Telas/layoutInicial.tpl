@@ -78,23 +78,6 @@
                         </ul>
                     </li>
                     <li>
-                        <a data-toggle="collapse" data-target="#prateleira"><i class="fa fa-fw"></i> Prateleira <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="prateleira" class="collapse">
-                            <li>
-                                <a href="?acao=FormPrateleira">Adicionar Prateleira</a>
-                            </li>
-                            <li>
-                                <a href="?acao=FormRemovePrateleira"> Remover Prateleira</a>
-                            </li>
-                            <li>
-                                <a href="?acao=ConsultaPrateleira">Consultar Prateleira</a>
-                            </li>
-                            <li>
-                                <a href="?acao=FormEditaPrateleira">Editar Prateleira</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
                         <a href="?acao=ListaCurso">Ranking de Produtos</a>
                     </li>
                     <li>

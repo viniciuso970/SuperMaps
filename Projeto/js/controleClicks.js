@@ -156,14 +156,14 @@ $("#formEditaPrateleira").submit(function (e) {
         alert("Campo obrigatório não preenchido");
         return false;
     }
-
+    var posX = getQueryVariable("posX");
+    var posY = getQueryVariable("posY");
     // Monta o json com os dados da form
     var dados = $formInsere.serialize();
 
-
     // Define a ação do PHP
     $.ajax({
-        url: "class/index.php?acao=EditaPrateleira",
+        url: "class/index.php?acao=EditaPrateleira&posX="+posX+"&posY="+posY,
         data: dados,
         type: 'POST',
         success: function (retornoPost) {
