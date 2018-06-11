@@ -5,6 +5,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
+        <meta http-equiv="Expires" content="Tue, 01 Jan 1995 12:12:12 GMT">
+        <meta http-equiv="Pragma" content="no-cache">
         <meta name="author" content="">
 
         <title>SuperMaps</title>

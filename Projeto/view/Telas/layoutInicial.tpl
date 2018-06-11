@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Expires" content="Tue, 01 Jan 1995 12:12:12 GMT">
+    <meta http-equiv="Pragma" content="no-cache">
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -47,12 +49,9 @@
                         <li>
                             <a href="?acao=PerfilUsuario"><i class="fa fa-fw fa-user"></i> Perfil</a>
                         </li>
-                        <li>
-                            <a href="?acao=RemoverUsuario"><i class="fa fa-fw fa-gear"></i> Excluir Conta</a>
-                        </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="?acao=Logout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="#" class="btnLogout"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -298,6 +297,7 @@
     <!-- Bootstrap Core JavaScript -->
     <script type="text/javascript" src="js/Login/statusLogin.js"></script>
     <script type="text/javascript" src="js/controleClicks.js"></script>
+    <script type="text/javascript" src="js/usuarios.js"></script>
     <script src="view/Telas/js/bootstrap.min.js"></script>
 </body>
 

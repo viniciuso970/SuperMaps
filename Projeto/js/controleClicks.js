@@ -60,37 +60,13 @@ $("#formAddPrateleira").submit(function (e) {
     var produto = $("#produtoAdd").val();
     var posX = getQueryVariable("posX");
     var posY = getQueryVariable("posY");
-    window.location.replace("index.php?acao=FormProdPrat&produto="+produto+"&posX="+posX+"&posY="+posY);
-});
-
-$("#deletarPrateleira").click(function(e) {
-    var posX = getQueryVariable("posX");
-    var posY = getQueryVariable("posY");
-    window.location.replace("index.php?acao=FormRemovePrateleira&posX="+posX+"&posY="+posY);
-}
-);
-
-$("#formEditaPerfilUsuario").submit(function (e) {
-    // Previne que o browser abra o link
-    e.preventDefault();
-    // Encontra a form no html
-    var $formInsere = $("#formEditaPerfilUsuario");
-
-    // Verifica se todos os campos necessários foram preenchidos
-    if (!validarCampos($formInsere)) {
-        alert("Campo obrigatório não preenchido");
-        return false;
-    }
-
-    // Monta o json com os dados da form
-    var dados = $formInsere.serialize();
-
-
-    // Define a ação do PHP
+    //window.location.replace("index.php?acao=FormProdPrat&produto="+produto+"&posX="+posX+"&posY="+posY);
     $.ajax({
-        url: "class/index.php?acao=EditaPerfilUsuario",
-        data: dados,
-        type: 'POST',
+        url: "class/index.php?acao=FormProdPrat",
+        data: {"produto" : produto,
+                "posX" : posX,
+                "posY" : posY},
+        type: 'GET',
         success: function (retornoPost) {
             // Recebe a resposta e mostra se ocorreu erro ou não
             var retornoPost = JSON.parse(retornoPost);
@@ -101,12 +77,19 @@ $("#formEditaPerfilUsuario").submit(function (e) {
         async: false
     });
     setTimeout(function () {
-        window.location.replace("index.php?acao=PerfilUsuario")
+        //window.location.replace("index.php?acao=ConsultaMapa")
+        window.location = "index.php?acao=FormProdPrat&produto=0&posX="+posX+"&posY="+posY;
     }, 2000);
+    //window.location.replace("index.php?acao=FormProdPrat&produto=0&posX="+posX+"&posY="+posY);
     return false;
-
 });
 
+$("#deletarPrateleira").click(function(e) {
+    var posX = getQueryVariable("posX");
+    var posY = getQueryVariable("posY");
+    window.location.replace("index.php?acao=FormRemovePrateleira&posX="+posX+"&posY="+posY);
+}
+);
 
 $("#formEditaMapa").submit(function (e) {
     // Previne que o browser abra o link
@@ -139,7 +122,8 @@ $("#formEditaMapa").submit(function (e) {
         async: false
     });
     setTimeout(function () {
-        window.location.replace("index.php?acao=ConsultaMapa")
+        //window.location.replace("index.php?acao=ConsultaMapa")
+        window.location = "index.php?acao=ConsultaMapa";
     }, 2000);
     return false;
 
@@ -240,10 +224,4 @@ function getQueryVariable(variable) {
         }
     }
     return false;
-}
-
-function recarregarLista() {
-    if (location.search.includes("acao=Lista")) {
-        setTimeout(location.reload(), 2000);
-    }
 }

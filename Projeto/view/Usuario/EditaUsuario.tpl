@@ -27,6 +27,7 @@
                                 </div>
                                 <input type="hidden" name="id" value="[@id]">
                                 <button type="submit" class="btn btn-primary"> Editar </button>
+                                <a class="btn btn-danger" id="deletarPessoa"> Deletar </a>
                             </form>
 
                         </div>

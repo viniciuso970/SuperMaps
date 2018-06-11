@@ -9,10 +9,8 @@ class PerfilUsuario {
                 $retorno["erro"] = true;
                 $retorno["msg"] = "Nenhum usuário logado";
             }
-            
             $id = $_SESSION["id"];
             $tabela = "usuario";
-            
             $resultado = Lista::buscaPorId($id, $tabela);
             if(!$resultado["erro"]) {
                 $registro = $resultado["msg"];

@@ -3,10 +3,14 @@
 class FormProdPrat {
     public function controller() {
         try {
-            $template = new Template("view/Prateleira/InserePrateleira.tpl");
             $produto = $_GET["produto"];
             $posY = $_GET["posY"];
             $posX = $_GET["posX"];
+            if($produto === "0") {
+                $template = new Template("view/Prateleira/InserePrateleira.tpl");
+            } else {
+                $template = new Template("../view/Prateleira/InserePrateleira.tpl");
+            }
             $consultaPrateleira = ORM::for_table("prateleira")->where(array(
                 'andar' => $posX,
                 'produtoAndar' => $posY))->find_array();
@@ -32,7 +36,6 @@ class FormProdPrat {
             $produtosNaPrateleira = ORM::for_table("produto_prateleira")->join(
                 "produto", array("produto_prateleira.id_produto", "=", "produto.id"))
                 ->where("produto_prateleira.id_prateleira", $consultaPrateleira[0]["id"])->find_array();
-            
             $conteudo = array_column($produtosNaPrateleira, "nome");
             $echo = "";
             foreach($conteudo as $html) {
@@ -40,7 +43,11 @@ class FormProdPrat {
             }
             $template->set("conteudo", $echo);
             $retorno["erro"] = false;
-            $retorno["msg"] = $template->saida();
+            if($produto === "0") {
+                $retorno["msg"] = $template->saida();
+            } else {
+                $retorno["msg"] = "O produto foi inserido na prateleira com sucesso";
+            }
         } catch (Exception $ex) {
             $retorno["erro"] = true;
             $retorno["msg"] = "Erro ao visualizar o form do curso\n".$ex->getMessage()."\n";

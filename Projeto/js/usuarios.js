@@ -1,4 +1,4 @@
-$(".btnRegistrar").click(function(e) {
+$(".btnRegistrar").click(function (e) {
     // Previne que o browser abra o link
     e.preventDefault();
 
@@ -19,15 +19,15 @@ $(".btnRegistrar").click(function(e) {
     $modalInsere.modal("show");
 
     // Ações para os Radio Buttons
-    $radioProfessor.click(function(e) {
+    $radioProfessor.click(function (e) {
         $dadosProfessor.slideDown("fast");
     });
-    $radioEstudante.click(function(e) {
+    $radioEstudante.click(function (e) {
         $dadosProfessor.slideUp("fast");
     });
 });
 
-$("#formEditaPerfilUsuario").submit(function(e) {
+$("#formEditaPerfilUsuario").submit(function (e) {
     e.preventDefault();
     var $formEditaPerfilUsuario = $("#formEditaPerfilUsuario");
     var valores = $formEditaPerfilUsuario.serializeArray();
@@ -43,7 +43,7 @@ $("#formEditaPerfilUsuario").submit(function(e) {
         url: "class/index.php?acao=" + acao,
         data: dados,
         type: 'POST',
-        success: function(retornoPost) {
+        success: function (retornoPost) {
             // Recebe a resposta e mostra se ocorreu erro ou não
             var retornoPost = JSON.parse(retornoPost);
             $("#status .modal-title").html(retornoPost.erro ? "Erro" : "Sucesso");
@@ -52,10 +52,12 @@ $("#formEditaPerfilUsuario").submit(function(e) {
         },
         async: false
     });
-    setTimeout(function() { window.location.replace("index.php?acao=ConsultaMapa") }, 2000);
+    setTimeout(function () {
+        window.location.replace("index.php?acao=ConsultaMapa")
+    }, 2000);
 });
 
-$(".editarPessoa").click(function(e) {
+$(".editarPessoa").click(function (e) {
     // Previne que o browser abra o link
     e.preventDefault();
 
@@ -72,7 +74,7 @@ $(".editarPessoa").click(function(e) {
         $modal = $("#modalEditaProfessor");
     }
 
-    $modal.find("input").each(function() {
+    $modal.find("input").each(function () {
         // Descobre o nome do input
         var name = $(this).attr("name");
         if (name != "id" && name != "idUsuario") {
@@ -92,7 +94,28 @@ $(".editarPessoa").click(function(e) {
     $modal.modal("show");
 });
 
-$(".removerPessoa").click(function(e) {
+$("#deletarPessoa").click(function (e) {
+	e.preventDefault();
+    var form = $("#formEditaPerfilUsuario");
+    var dados = form.serializeArray();
+    var id = dados[4].value;
+    $.ajax({
+        url: "class/index.php?acao=RemoveUsuario&id=" + id,
+        type: 'POST',
+        success: function (retornoPost) {
+            // Recebe a resposta e mostra se ocorreu erro ou não
+            $("#status .modal-title").html("Sucesso");
+            $("#status .modal-body").html("Usuário removido com sucesso");
+            $("#status").modal("show");
+        },
+        async: false
+    });
+    setTimeout(function () {
+        window.location.replace("index.php")
+    }, 2000);
+});
+
+$(".removerPessoa").click(function (e) {
     // Encontra a linha e o modal de confirmação
     var acao = $(this).attr("acao");
     var $linha = $(this).closest("tr");
@@ -106,13 +129,13 @@ $(".removerPessoa").click(function(e) {
     }
     console.log(acao);
     $modalRemocao.modal("show");
-    $("#sim").click(function(e) {
+    $("#sim").click(function (e) {
         e.preventDefault();
         $modalRemocao.modal("hide");
         $.ajax({
             type: 'GET',
             url: "class/index.php?acao=" + acao + "&id=" + cod + "&idUsuario=" + codUsuario,
-            success: function(retornoRemove) {
+            success: function (retornoRemove) {
                 console.log(retornoRemove);
                 var retornoRemove = JSON.parse(retornoRemove);
                 if (!retornoRemove.erro) {
@@ -134,7 +157,7 @@ function validarCampos($form) {
     var camposPreenchidos = true;
 
     // Verificar campos obrigatorios da form
-    $form.find("input.obrigatorio").each(function() {
+    $form.find("input.obrigatorio").each(function () {
         if (!$(this).val()) {
             return camposPreenchidos = false;
         }
@@ -144,7 +167,7 @@ function validarCampos($form) {
         // Verificar campos específicos do professor
         var isProfessor = $form.find("#radioProfessor").is(":checked");
         if (isProfessor) {
-            $form.find("input.obrigatorio-prof").each(function() {
+            $form.find("input.obrigatorio-prof").each(function () {
                 if (!$(this).val()) {
                     return camposPreenchidos = false;
                 }
@@ -155,7 +178,7 @@ function validarCampos($form) {
     return camposPreenchidos;
 }
 
-$("#formInsere").submit(function(e) {
+$("#formInsere").submit(function (e) {
     // Previne que o browser abra o link
     e.preventDefault();
 
@@ -179,7 +202,7 @@ $("#formInsere").submit(function(e) {
         url: "class/index.php?acao=" + acao,
         data: dados,
         type: 'POST',
-        success: function(retornoPost) {
+        success: function (retornoPost) {
             // Recebe a resposta e mostra se ocorreu erro ou não
             var retornoPost = JSON.parse(retornoPost);
             $("#modalInsere").modal("hide");
@@ -190,13 +213,10 @@ $("#formInsere").submit(function(e) {
         async: false
     });
 
-    // se a operação foi feita numa página de listagem, atualiza a página
-    recarregarLista();
-
     return false;
 });
 
-$(".formEdita").submit(function(e) {
+$(".formEdita").submit(function (e) {
     // Previne que o browser abra o link
     e.preventDefault();
 
@@ -214,7 +234,7 @@ $(".formEdita").submit(function(e) {
         url: "class/index.php?acao=" + acao,
         data: dados,
         type: 'POST',
-        success: function(retornoPost) {
+        success: function (retornoPost) {
             console.log(dados);
             var retornoPost = JSON.parse(retornoPost);
             console.log(retornoPost);
@@ -231,9 +251,6 @@ $(".formEdita").submit(function(e) {
         },
         async: false
     });
-
-    // se a operação foi feita numa página de listagem, atualiza a página
-    recarregarLista();
 
     return false;
 });
