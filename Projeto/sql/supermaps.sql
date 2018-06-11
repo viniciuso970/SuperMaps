@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 04, 2018 at 08:53 PM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Generation Time: Jun 11, 2018 at 10:45 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -39,7 +39,7 @@ CREATE TABLE `mapa` (
 --
 
 INSERT INTO `mapa` (`id`, `largura`, `altura`) VALUES
-(0, 11, 10);
+(0, 9, 9);
 
 -- --------------------------------------------------------
 
@@ -58,7 +58,9 @@ CREATE TABLE `prateleira` (
 --
 
 INSERT INTO `prateleira` (`id`, `andar`, `produtoAndar`) VALUES
-(0, 4, 5);
+(3, 0, 0),
+(4, 50, 50),
+(5, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -72,6 +74,18 @@ CREATE TABLE `produto` (
   `preco` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `produto`
+--
+
+INSERT INTO `produto` (`id`, `nome`, `preco`) VALUES
+(1, 'arroz', 10),
+(2, 'feijao', 20),
+(5, 'carne', 20),
+(6, 'tomate', 20),
+(7, 'alface', 20),
+(8, 'macarra', 20);
+
 -- --------------------------------------------------------
 
 --
@@ -83,6 +97,23 @@ CREATE TABLE `produto_prateleira` (
   `id_produto` int(11) DEFAULT NULL,
   `id_prateleira` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `produto_prateleira`
+--
+
+INSERT INTO `produto_prateleira` (`id`, `id_produto`, `id_prateleira`) VALUES
+(3, 1, 3),
+(14, 8, 3),
+(15, 2, 3),
+(16, 5, 3),
+(17, 6, 3),
+(18, 7, 3),
+(19, 1, 5),
+(20, 2, 5),
+(21, 5, 5),
+(22, 6, 5),
+(23, 7, 5);
 
 -- --------------------------------------------------------
 
@@ -102,8 +133,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `usuario`, `email`, `senha`) VALUES
-(1, 'vinicius', 'vinicius@mail.com', 'vinicius'),
-(2, 'professor', 'professor@mail.com', 'professor');
+(1, 'vinicius', 'viniciuso970@gmail.com', 'vinicius'),
+(2, 'eduggiani', 'eduggiani@hotmail.com', '1234567'),
+(3, 'joao', 'oi@oi.com', '123');
 
 --
 -- Indexes for dumped tables
@@ -147,16 +179,29 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT for table `prateleira`
+--
+ALTER TABLE `prateleira`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
-ALTER TABLE `prateleira`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `produto_prateleira`
+--
 ALTER TABLE `produto_prateleira`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- Constraints for dumped tables
 --
