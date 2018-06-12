@@ -27,12 +27,12 @@
 <body>
 
     <div id="wrapper">
-        
+
         <!-- Navigation -->
         <nav id="barraNavegacao" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                
+
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -77,6 +77,17 @@
                         </ul>
                     </li>
                     <li>
+                        <a data-toggle="collapse" data-target="#produto"><i class="fa fa-fw"></i> Produto <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="produto" class="collapse">
+                            <li>
+                                <a href="?acao=FormProduto">Adicionar Produto</a>
+                            </li>
+                            <li>
+                                <a href="?acao=ConsultaProduto">Consultar Produto</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="?acao=ListaCurso">Ranking de Produtos</a>
                     </li>
                     <li>
@@ -103,7 +114,7 @@
 
     </div>
     <!-- /#wrapper -->
-    
+
     <!-- Modais -->
     <!-- Formulário para Status -->
         <div class="modal fade" id="status">
@@ -122,7 +133,7 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-		
+
         <!-- Formulário para Confirmação -->
         <div class="modal fade" id="confirmaRemocao">
             <div class="modal-dialog">
@@ -141,7 +152,7 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-        
+
         <!-- Formulário para Login -->
         <div class="modal fade container" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm">
@@ -169,7 +180,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Formulário para Registro -->
         <div class="modal fade container" id="modalInsere" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -229,7 +240,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Formulário para edição de Usuario-->
         <div class="modal fade" id="modalEditaUsuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -277,7 +288,7 @@
                                 <label>Descrição do Curso</label>
                                 <textarea disabled="disabled" class="form-control obrigatorio" rows="4" name="descricao"></textarea>
                             </div>
-                            
+
                             <div class="modal-footer">
                                 <button class="btn btn-primary editarCamposCurso">Editar</button>
                                 <button disabled="disabled" type="submit" class="btn btn-primary salvarCamposCurso">Salvar</button>
@@ -290,7 +301,7 @@
             </div>
         </div>
     <!-- Modais -->
-    
+
     <!-- jQuery -->
     <script src="view/Telas/js/jquery.js"></script>
 
