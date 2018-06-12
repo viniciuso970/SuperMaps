@@ -13,6 +13,12 @@ class ConsultaMapa
                 $table = "";
                 $texto = "";
                 $template = new Template("view/Mapa/ConsultaMapa.tpl");
+                $produtos = ORM::for_table("produto")->find_array();
+                $echo = "";
+                foreach($produtos as $item) {
+                    $echo .= "<option>". $item["nome"] ."</option>";
+                }
+                $template->set("produtos", $echo);
                 for ($i = 0; $i < $altura; $i++) {
                     $table .= '<tr>';
                     for ($j = 0; $j < $largura; $j++) {

@@ -57,10 +57,9 @@ $("#formAddPrateleira").submit(function (e) {
 
     var $formInsere = $("#formAddPrateleira");
 
-    var produto = $("#produtoAdd").val();
+    var produto = $("#produtosList").val();
     var posX = getQueryVariable("posX");
     var posY = getQueryVariable("posY");
-    //window.location.replace("index.php?acao=FormProdPrat&produto="+produto+"&posX="+posX+"&posY="+posY);
     $.ajax({
         url: "class/index.php?acao=FormProdPrat",
         data: {"produto" : produto,
@@ -143,11 +142,8 @@ $("#formEditaMapa").submit(function (e) {
         alert("Campo obrigatório não preenchido");
         return false;
     }
-
     // Monta o json com os dados da form
     var dados = $formInsere.serialize();
-
-
     // Define a ação do PHP
     $.ajax({
         url: "class/index.php?acao=EditaMapa",
@@ -163,7 +159,6 @@ $("#formEditaMapa").submit(function (e) {
         async: false
     });
     setTimeout(function () {
-        //window.location.replace("index.php?acao=ConsultaMapa")
         window.location = "index.php?acao=ConsultaMapa";
     }, 2000);
     return false;

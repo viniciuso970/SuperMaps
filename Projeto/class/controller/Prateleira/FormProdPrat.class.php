@@ -6,11 +6,18 @@ class FormProdPrat {
             $produto = $_GET["produto"];
             $posY = $_GET["posY"];
             $posX = $_GET["posX"];
+
+            $produtos = ORM::for_table("produto")->find_array();
+            $echo = "";
+            foreach($produtos as $item) {
+                $echo .= "<option>". $item["nome"] ."</option>";
+            }
             if($produto === "0") {
                 $template = new Template("view/Prateleira/InserePrateleira.tpl");
             } else {
                 $template = new Template("../view/Prateleira/InserePrateleira.tpl");
             }
+            $template->set("produtos", $echo);
             $consultaPrateleira = ORM::for_table("prateleira")->where(array(
                 'andar' => $posX,
                 'produtoAndar' => $posY))->find_array();

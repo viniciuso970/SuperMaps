@@ -11,8 +11,10 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <form role="form" action="FormProdPrat" id="formAddPrateleira">
-                            <div class="input-group stylish-input-group">
-                                <input type="text" class="form-control" placeholder="Nome do Produto" id="produtoAdd">  
+                            <div class="form-group">
+                                <select id="produtosList" class="form-control">
+                                    [@produtos]
+                                </select>
                             </div>
                             <div class="form-group">
                                 <ul class="list-group">
