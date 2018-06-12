@@ -36,10 +36,11 @@ class FormProdPrat {
             $produtosNaPrateleira = ORM::for_table("produto_prateleira")->join(
                 "produto", array("produto_prateleira.id_produto", "=", "produto.id"))
                 ->where("produto_prateleira.id_prateleira", $consultaPrateleira[0]["id"])->find_array();
-            $conteudo = array_column($produtosNaPrateleira, "nome");
             $echo = "";
-            foreach($conteudo as $html) {
-                $echo .= "<li class='list-group-item'>". $html ."</li>";
+            foreach($produtosNaPrateleira as $html) {
+                $echo .= "<li class='list-group-item'>". $html["nome"] ."
+                <a href='#' name='deletarProdPrat' data-value=". $html["id_produto"] ." style='float:right; color: red'><i class='fa fa-times'></i></a>
+                </li>";
             }
             $template->set("conteudo", $echo);
             $retorno["erro"] = false;

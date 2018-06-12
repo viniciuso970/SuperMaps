@@ -87,7 +87,48 @@ $("#formAddPrateleira").submit(function (e) {
 $("#deletarPrateleira").click(function(e) {
     var posX = getQueryVariable("posX");
     var posY = getQueryVariable("posY");
-    window.location.replace("index.php?acao=FormRemovePrateleira&posX="+posX+"&posY="+posY);
+    $.ajax({
+        url: "class/index.php?acao=RemovePrateleira",
+        data: { "posX" : posX,
+                "posY" : posY},
+        type: 'POST',
+        success: function (retornoPost) {
+            // Recebe a resposta e mostra se ocorreu erro ou não
+            var retornoPost = JSON.parse(retornoPost);
+            $("#status .modal-title").html(retornoPost.erro ? "Erro" : "Sucesso");
+            $("#status .modal-body").html(retornoPost.msg);
+            $("#status").modal("show");
+        },
+        async: false
+    });
+    setTimeout(function () {
+        window.location = "index.php?acao=ConsultaMapa";
+    }, 2000);
+}
+);
+
+$("a[name='deletarProdPrat']").click(function(e) {
+    var posX = getQueryVariable("posX");
+    var posY = getQueryVariable("posY");
+    var id_produto = $(this).data("value");
+    $.ajax({
+        url: "class/index.php?acao=RemoveProdPrat",
+        data: { "posX" : posX,
+                "posY" : posY,
+                "id_produto": id_produto},
+        type: 'GET',
+        success: function (retornoPost) {
+            // Recebe a resposta e mostra se ocorreu erro ou não
+            var retornoPost = JSON.parse(retornoPost);
+            $("#status .modal-title").html(retornoPost.erro ? "Erro" : "Sucesso");
+            $("#status .modal-body").html(retornoPost.msg);
+            $("#status").modal("show");
+        },
+        async: false
+    });
+    setTimeout(function () {
+        window.location = "index.php?acao=FormProdPrat&produto=0&posX="+posX+"&posY="+posY;
+    }, 2000);
 }
 );
 
@@ -140,15 +181,18 @@ $("#formEditaPrateleira").submit(function (e) {
         alert("Campo obrigatório não preenchido");
         return false;
     }
-    var posX = getQueryVariable("posX");
-    var posY = getQueryVariable("posY");
+    var posX = $("#andar").val();
+    var posY = $("#produtoAndar").val();
+    var xAntigo = $("#xAntigo").val();
+    var yAntigo = $("#yAntigo").val();
     // Monta o json com os dados da form
-    var dados = $formInsere.serialize();
-
     // Define a ação do PHP
     $.ajax({
-        url: "class/index.php?acao=EditaPrateleira&posX="+posX+"&posY="+posY,
-        data: dados,
+        url: "class/index.php?acao=EditaPrateleira",
+        data: { "posX" : posX,
+                "posY" : posY,
+                "xAntigo" : xAntigo,
+                "yAntigo" : yAntigo},
         type: 'POST',
         success: function (retornoPost) {
             // Recebe a resposta e mostra se ocorreu erro ou não

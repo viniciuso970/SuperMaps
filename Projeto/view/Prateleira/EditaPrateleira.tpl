@@ -14,12 +14,14 @@
                         <form role="form" action="EditaPrateleira" id="formEditaPrateleira">
                             <div class="form-group">
                                 <label>X</label>
-                                <input class="form-control obrigatorio" placeholder="Insira a quantidade de andares da prateleira" id="andar" type="number" min="1" value="[@andar]">
+                                <input class="form-control obrigatorio" placeholder="Insira a quantidade de andares da prateleira" id="andar" type="number" min="0" value="[@andar]">
                             </div>
                             <div class="form-group">
                                 <label>Y</label>
-                                <input class="form-control obrigatorio" placeholder="Insira a quantidade de produtos por andar na prateleira" id="produtoAndar" type="number" min="1" value="[@produtoAndar]">
+                                <input class="form-control obrigatorio" placeholder="Insira a quantidade de produtos por andar na prateleira" id="produtoAndar" type="number" min="0" value="[@produtoAndar]">
                             </div>
+                            <input id="xAntigo" type="hidden" min="0" value="[@andar]">
+                            <input id="yAntigo" type="hidden" min="0" value="[@produtoAndar]">
                             <button type="submit" class="btn btn-primary">Editar</button>
                             <button type="reset" class="btn btn-warning">Resetar</button>
                         </form>
