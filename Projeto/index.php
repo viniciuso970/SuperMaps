@@ -1,7 +1,7 @@
 <?php
     function __autoload($classe) {
         $pastas = array('model', 'controller', 'controller/Login', 
-        'controller/EntidadesFisicas', 'controller/Mapa', 'controller/Prateleira');
+        'controller/EntidadesFisicas', 'controller/Mapa', 'controller/Prateleira', 'controller/Produto');
         foreach ($pastas as $pasta) {
             if (file_exists("class/{$pasta}/{$classe}.class.php")) {
                 include_once "class/{$pasta}/{$classe}.class.php";
@@ -22,6 +22,8 @@
                     $pagina = new $class;
                     $retorno = $pagina->controller();
                     if($retorno["erro"]) {
+			ControlaSessao::iniciaSessao();
+			$layout->set("nomeUsuario", $_SESSION["usuario"]);
                         ORM::get_db()->rollBack();
                     }
                     else {

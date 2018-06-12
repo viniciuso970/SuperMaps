@@ -214,6 +214,114 @@ $("#editarPrateleira").click(function (e) {
 });
 
 
+$("#formAddProduto").submit(function (e) {
+    // Previne que o browser abra o link
+    e.preventDefault();
+    // Encontra a form no html
+    var $formInsere = $("#formAddProduto");
+
+    // Verifica se todos os campos necessários foram preenchidos
+    if (!validarCampos($formInsere)) {
+        alert("Campo obrigatório não preenchido");
+        return false;
+    }
+
+    // Monta o json com os dados da form
+    var dados = $formInsere.serialize();
+
+
+    // Define a ação do PHP
+    var acao = $formInsere.attr("action");
+    $.ajax({
+        url: "class/index.php?acao=" + acao,
+        data: dados,
+        type: 'POST',
+        success: function (retornoPost) {
+            // Recebe a resposta e mostra se ocorreu erro ou não
+            var retornoPost = JSON.parse(retornoPost);
+            console.log(retornoPost);
+            $("#status .modal-title").html(retornoPost.erro ? "Erro" : "Sucesso");
+            $("#status .modal-body").html(retornoPost.msg);
+            $("#status").modal("show");
+        },
+        async: false
+    });
+    setTimeout(function () {
+        window.location.replace("index.php?acao=FormProduto")
+    }, 2000);
+    return false;
+});
+
+$(".editaProduto").click(function (e) {
+    // Previne que o browser abra o link
+    e.preventDefault();
+    var id = $(this).attr("registro");
+    window.location.replace("index.php?acao=FormEditaProduto&id="+id);
+});
+
+$("#formEditaProduto").submit(function (e) {
+    // Previne que o browser abra o link
+    e.preventDefault();
+    // Encontra a form no html
+    var $formEdita = $("#formEditaProduto");
+
+    // Verifica se todos os campos necessários foram preenchidos
+    if (!validarCampos($formEdita)) {
+        alert("Campo obrigatório não preenchido");
+        return false;
+    }
+
+    // Monta o json com os dados da form
+    var dados = $formEdita.serialize();
+
+    // Define a ação do PHP
+    $.ajax({
+        url: "class/index.php?acao=EditaProduto",
+        data: dados,
+        type: 'POST',
+        success: function (retornoPost) {
+            // Recebe a resposta e mostra se ocorreu erro ou não
+            var retornoPost = JSON.parse(retornoPost);
+            $("#status .modal-title").html(retornoPost.erro ? "Erro" : "Sucesso");
+            $("#status .modal-body").html(retornoPost.msg);
+            $("#status").modal("show");
+        },
+        async: false
+    });
+    setTimeout(function () {
+        window.location.replace("index.php?acao=ConsultaProduto")
+    }, 2000);
+    return false;
+
+});
+
+$(".removeProduto").click(function (e){
+    e.preventDefault();
+    var id = $(this).attr("registro");
+    $("#confirmaRemocao").modal("show");
+    $("#sim").click(function (e) {
+        $("#confirmaRemocao").modal("hide");
+        $.ajax({
+            url: "class/index.php?acao=RemoveProduto",
+            data: {"id": id},
+            type: 'POST',
+            success: function (retornoPost) {
+                // Recebe a resposta e mostra se ocorreu erro ou não
+                var retornoPost = JSON.parse(retornoPost);
+                $("#status .modal-title").html(retornoPost.erro ? "Erro" : "Sucesso");
+                $("#status .modal-body").html(retornoPost.msg);
+                $("#status").modal("show");
+            },
+            async: false
+        });
+        return false;
+    });
+    setTimeout(function () {
+        window.location.replace("index.php?acao=ConsultaProduto")
+    }, 2000);
+    return false;
+});
+
 function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split("&");

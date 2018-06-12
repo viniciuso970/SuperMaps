@@ -10,6 +10,22 @@ class Lista {
 	}
 	return $retorno;
     }
+
+    public static function verificaRegistro($tabela, $coluna, $valor) {
+	$registro = ORM::for_table($tabela)->where($coluna, $valor)->find_one();
+	if($registro) {
+		$retorno = true;
+	} else {
+		$retorno = false;
+	}
+	return $retorno;
+    }
+
+    public static function pegaTabela($tabela) {
+	$registro = ORM::for_table($tabela)->find_array();
+	return $registro;
+    }
+
     public static function buscaPorId($id, $tabela) {
         $registro = ORM::for_table($tabela)->where("id", $id)->find_array();
         if (!$registro) {
