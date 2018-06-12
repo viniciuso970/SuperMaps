@@ -22,6 +22,8 @@
     <!-- Custom Fonts -->
     <link href="view/Telas/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <link href="css/mapa.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -309,6 +311,7 @@
     <script type="text/javascript" src="js/Login/statusLogin.js"></script>
     <script type="text/javascript" src="js/controleClicks.js"></script>
     <script type="text/javascript" src="js/usuarios.js"></script>
+    <script type="text/javascript" src="js/mapa.js"></script>
     <script src="view/Telas/js/bootstrap.min.js"></script>
 </body>
 

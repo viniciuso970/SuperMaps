@@ -8,12 +8,12 @@
                         </h1>
                         <div class="form-group">
                             <label> Consultar Produto </label>
-                            <select id="produtosList" class="form-control">
+                            <select name="produtosListBusca" id="produtosListBusca" class="form-control">
                                 [@produtos]
                             </select>
                             </div>
                         </div>
-                        <table class="table table-bordered">
+                        <table id="tableMapa" class="table table-bordered">
                             [@tabela]
                         <table>
                     </div>

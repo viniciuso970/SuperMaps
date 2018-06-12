@@ -16,7 +16,7 @@ class ConsultaMapa
                 $produtos = ORM::for_table("produto")->find_array();
                 $echo = "";
                 foreach($produtos as $item) {
-                    $echo .= "<option>". $item["nome"] ."</option>";
+                    $echo .= "<option value=".$item["id"].">". $item["nome"] ."</option>";
                 }
                 $template->set("produtos", $echo);
                 for ($i = 0; $i < $altura; $i++) {
@@ -26,11 +26,13 @@ class ConsultaMapa
                             'andar' => $i,
                             'produtoAndar' => $j))->find_array();
                         if($consultaPrateleira) {
-                            $texto = "Prateleira :". $consultaPrateleira[0]["id"];    
+                            //$texto = "Prateleira :". $consultaPrateleira[0]["id"];
+                            $table .= '<td class="x-'.$i.' y-'.$j.' tem-prateleira" id="verPrateleira"><a class="table-link" href="?acao=FormProdPrat&produto=0&posX='.$i.'&posY='.$j.'">'.$texto .'</a></td>';
                         } else {
-                            $texto = "Adicionar Prateleira";
+                            //$texto = "&nbsp;";
+                            $table .= '<td class="x-'.$i.' y-'.$j.'" id="verPrateleira"><a class="table-link" href="?acao=FormProdPrat&produto=0&posX='.$i.'&posY='.$j.'">'.$texto .'</a></td>';
                         }
-                        $table .= '<td id="verPrateleira"> <a href="?acao=FormProdPrat&produto=0&posX='.$i.'&posY='.$j.'"> '.$texto .'</a> </td>';
+                        //$table .= '<td id="verPrateleira"><a class="table-link" href="?acao=FormProdPrat&produto=0&posX='.$i.'&posY='.$j.'"> '.$texto .'</a> </td>';
                     }
                     $table .= '</tr>';
                 }
